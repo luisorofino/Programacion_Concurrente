@@ -4,27 +4,27 @@ Este repositorio contiene la implementación de una arquitectura Cliente-Servido
 
 Es un proyecto hecho en parejas, con mi compañero Daniel Casquero Palencia.
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
-El sistema permite el intercambio de información mediante el paso de mensajes (Message Passing) utilizando **Sockets TCP**. El servidor es capaz de atender múltiples peticiones concurrentes asegurando la integridad de los datos y evitando condiciones de carrera (*race conditions*).
+El sistema permite el intercambio de información mediante el paso de mensajes, en este caso, recetas de usuarios ficticios, utilizando **Sockets TCP**. El servidor es capaz de atender múltiples peticiones concurrentes asegurando la integridad de los datos y evitando condiciones de carrera.
 
-### 🚀 Características Técnicas
+### Características Técnicas
 
 * **Lenguaje:** Java.
 * **Comunicación:** Sockets (TCP/IP).
 * **Modelo:** Cliente-Servidor Multihilo.
 * **Protocolo de Comunicación:** Objetos serializados personalizados (ver paquete `mensaje`).
 
-### ⚙️ Gestión de la Concurrencia
+### Gestión de la Concurrencia
 
 Para garantizar la seguridad en el acceso a las secciones críticas, se han implementado y comparado diferentes mecanismos de sincronización:
 
-* **Locks:** Implementación de algoritmos clásicos de exclusión mutua (ej. Algoritmo de la Panadería / Bakery Algorithm).
+* **Locks:** Implementación de algoritmos clásicos de exclusión mutua (ej. Bakery Algorithm).
 * **Semáforos:** Implementación de semáforos binarios y contadores para la gestión de recursos limitados.
 * **Monitores:** Uso de bloques `synchronized` y mecanismos `wait/notify` de Java.
 * **Gestión de Hilos:** Uso de `Thread` y `Runnable` para la atención individualizada de clientes.
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 El código fuente se organiza en la carpeta `src` siguiendo una estructura modular:
 
@@ -34,9 +34,9 @@ El código fuente se organiza en la carpeta `src` siguiendo una estructura modul
 * `src/baseDatos`: Gestión de la persistencia de datos (lectura/escritura de archivos).
 * `src/usuario`: Modelado de la entidad usuario.
 
-## 📄 Licencia
+## Licencia
 
-Este proyecto está bajo la Licencia **MIT** - mira el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia **MIT** - mirar el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 **Autores:**
